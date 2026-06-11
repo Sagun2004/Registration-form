@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="form-header">
+      <h1>Student Registration</h1>
+      <p>Fill in the details below to register</p>
+    </div>
+
+    <div class="card">
+      <form id="regForm" onsubmit="handleSubmit(event)" novalidate>
+
+        <!-- Personal Details -->
+        <div class="section-title">Personal Details</div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" name="fullname" placeholder="e.g. Rahul Sharma" required />
+          </div>
+          <div class="field">
+            <label>Roll Number <span class="req">*</span></label>
+            <input type="number" name="rollno" placeholder="e.g. 2301" required />
+          </div>
+        </div>
+
+        <!-- Academic Details -->
+        <div class="section-title">Academic Details</div>
+
+        <div class="field">
+          <label>Department <span class="req">*</span></label>
+          <select name="department" required>
+            <option value="" disabled selected>Select department</option>
+            <option value="CS">CS — Computer Science</option>
+            <option value="IT">IT — Information Technology</option>
+            <option value="ECE">ECE — Electronics & Communication</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Gender <span class="req">*</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender" value="Male" required /> Male</label>
+            <label><input type="radio" name="gender" value="Female" /> Female</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Hobbies</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="hobbies" value="Coding" /> 💻 Coding</label>
+            <label><input type="checkbox" name="hobbies" value="Reading" /> 📚 Reading</label>
+            <label><input type="checkbox" name="hobbies" value="Sports" /> ⚽ Sports</label>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="section-title">Contact</div>
+
+        <div class="field">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="e.g. rahul@college.edu" required />
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Registration →</button>
+
+        <div class="success-msg" id="successMsg">
+          ✅ Registration submitted successfully!
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
